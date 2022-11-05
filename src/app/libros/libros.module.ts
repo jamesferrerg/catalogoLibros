@@ -4,6 +4,8 @@ import { BuscarComponent } from './pages/buscar/buscar.component';
 import { LibroComponent } from './pages/libro/libro.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ListadoComponent } from './pages/listado/listado.component';
+import { LibrosRoutingModule } from './libros-routing.module';
+import { MaterialModule } from '../material/material.module';
 
 
 
@@ -15,7 +17,9 @@ import { ListadoComponent } from './pages/listado/listado.component';
     ListadoComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    LibrosRoutingModule,
+    MaterialModule
   ]
 })
 export class LibrosModule { }
