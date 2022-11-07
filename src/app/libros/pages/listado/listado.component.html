@@ -1,1 +1,37 @@
-<p>listado works!</p>
+<h1>Listado de libros</h1>
+<hr />
+
+<div class="row">
+  <div *ngFor="let libro of libros" class="col-md-2 col-sm-6">
+    <div class="card">
+      <img src="assets/libros/{{ libro.portada }}.jpg" class="card-img-top img-fluid">
+      <div class="card-body">
+        <h2 class="card-title">{{ libro.titulo }}</h2>
+        <p class="card-title">{{ libro.autor }}</p>
+        <p class="card-text">Precio: <strong>$ {{ libro.precio }} </strong></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--<div class="contenedor">
+  <mat-card *ngFor="let libro of libros">
+    <mat-card-header>
+      <mat-card-title> {{ libro.titulo }} </mat-card-title>
+      <mat-card-subtitle> {{ libro.autor }} </mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="assets/libros/{{ libro.portada }}.jpg" />
+    <mat-card-content>
+      <p>
+        Precio:<strong> $ {{ libro.precio | number }}</strong>
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary">Ver detalle</button>
+      <button mat-raised-button color="warn">
+        <i class="material-icons">shopping_cart</i>
+        Agregar al carrito
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>-->
