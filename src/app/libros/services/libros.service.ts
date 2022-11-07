@@ -13,4 +13,5 @@ export class LibrosService {
   getLibros(): Observable<Libro[]> {
     return this.http.get<Libro[]>('http://localhost:3000/libros');
   }
+  
 }

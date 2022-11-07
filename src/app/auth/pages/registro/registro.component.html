@@ -16,10 +16,11 @@
                     <div class="form-outline flex-fill mb-0">
                       <input
                         type="text"
-                        id="form3Example1c"
+                        name="nombres"
                         class="form-control"
+                        [(ngModel)]="usuario.nombres"
                       />
-                      <label class="form-label" for="form3Example1c"
+                      <label class="form-label"
                         >Nombre completo</label
                       >
                     </div>
@@ -32,6 +33,8 @@
                         type="email"
                         id="form3Example3c"
                         class="form-control"
+                        name="correo"
+                        [(ngModel)]="usuario.email"
                       />
                       <label class="form-label" for="form3Example3c"
                         >Correo electronico</label
@@ -46,6 +49,8 @@
                         type="password"
                         id="form3Example4c"
                         class="form-control"
+                        name="pwd"
+                        [(ngModel)]="usuario.password"
                       />
                       <label class="form-label" for="form3Example4c"
                         >Contraseña</label
@@ -81,7 +86,7 @@
                   </div>
 
                   <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                    <button type="button" class="btn btn-secondary btn-lg" routerLink="/auth/login">
+                    <button type="button" class="btn btn-secondary btn-lg" (click)="guardar()">
                       Enviar
                     </button>
                   </div>
