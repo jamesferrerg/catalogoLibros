@@ -1,21 +1,25 @@
-<h1>Listado de libros</h1>
-<hr />
-
-<div class="row">
-  <div *ngFor="let libro of libros" class="col-md-2 col-sm-6">
-    <div class="card">
-      <img src="assets/libros/{{ libro.portada }}.jpg" class="card-img-top img-fluid">
-      <div class="card-body">
-        <h2 class="card-title">{{ libro.titulo }}</h2>
-        <p class="card-title">{{ libro.autor }}</p>
-        <p class="card-text">Precio: <strong>$ {{ libro.precio }} </strong></p>
+<app-navbar></app-navbar>
+<div class="container">
+  <div class="row">
+    <div *ngFor="let libro of libros" class="col-md-3 col-sm-6">
+      <div class="card my-2">
+        <img src="assets/libros/{{ libro.portada }}.jpg" class="card-img-top img-fluid">
+        <div class="card-body">
+          <h2 class="card-title">{{ libro.titulo }}</h2>
+          <p class="card-title">{{ libro.autor }}</p>
+          <p class="card-text">Precio: <strong>$ {{ libro.precio | number }} </strong></p>
+          <div class="d-grid gap-2 d-md-block row mx-1">
+            <button type="button" class="btn btn-info my-2">Ver detalle</button>
+            <button type="button" class="btn btn-secondary"><i class="bi bi-cart3"></i> Agregar al carrito</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
-<!--<div class="contenedor">
-  <mat-card *ngFor="let libro of libros">
+<!--<div class="row">
+  <mat-card *ngFor="let libro of libros" class="col-md-2 col-sm-6 m-4">
     <mat-card-header>
       <mat-card-title> {{ libro.titulo }} </mat-card-title>
       <mat-card-subtitle> {{ libro.autor }} </mat-card-subtitle>
@@ -26,12 +30,14 @@
         Precio:<strong> $ {{ libro.precio | number }}</strong>
       </p>
     </mat-card-content>
-    <mat-card-actions>
-      <button mat-raised-button color="primary">Ver detalle</button>
-      <button mat-raised-button color="warn">
-        <i class="material-icons">shopping_cart</i>
-        Agregar al carrito
-      </button>
-    </mat-card-actions>
+    <div>
+      <mat-card-actions class="row">
+        <button mat-raised-button color="primary" class="my-2">Ver detalle</button>
+        <button mat-raised-button color="warn">
+          <i class="material-icons">shopping_cart</i>
+          Agregar al carrito
+        </button>
+      </mat-card-actions>
+    </div>
   </mat-card>
 </div>-->
