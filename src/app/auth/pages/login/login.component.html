@@ -1,7 +1,7 @@
 <section class="vh-100">
   <div class="container-fluid h-custom">
     <div class="row d-flex justify-content-center align-items-center h-100">
-      <div class="col-md-9 col-lg-6 col-xl-5">
+      <div class="col-md-9 col-lg-6 col-xl-5 animate__animated animate__fedeIn">
         <img
           src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
           class="img-fluid"
@@ -61,6 +61,10 @@
             </p>
           </div>
         </form>
+        <div class="alert alert-success mt-4 fade show" role="alert" *ngIf="mostrar">
+            <i class="bi bi-person-check-fill fs-5"></i> Usuario creado con exito!
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
       </div>
     </div>
   </div>

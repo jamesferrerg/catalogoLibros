@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from '../../interfaces/usuario.interface';
-import { LibrosService } from '../../../libros/services/libros.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UsuariosService } from '../../services/usuarios.service';
 

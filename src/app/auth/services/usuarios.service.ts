@@ -10,7 +10,11 @@ export class UsuariosService {
 
   constructor(private http: HttpClient) { }
 
-  agregarUsuario( usuario: Usuario ): Observable<Usuario> {
-    return this.http.post<Usuario>('http://localhost:3000/usuarios', usuario );
+  public mensaje: boolean = false;
+
+  agregarUsuario(usuario: Usuario): Observable<Usuario> {
+    this.mensaje = true;
+    return this.http.post<Usuario>('http://localhost:3000/usuarios', usuario);
   }
+
 }
