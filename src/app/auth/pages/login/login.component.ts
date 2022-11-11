@@ -55,11 +55,14 @@ export class LoginComponent implements OnInit {
   }
 
   buscar( allUsers: Usuario[] ) {
-    let existe = allUsers.filter(
-      usuario => (usuario.email == this.usuariolog.email && usuario.password == this.usuariolog.password)
-    )
+    let nombre;
+    let existe = allUsers
+      .filter(
+      usuario => (usuario.email == this.usuariolog.email && usuario.password == this.usuariolog.password))
+      .map(us => (nombre = us.nombres))
 
     if (existe.length != 0) {
+      sessionStorage.setItem('nombreUsuario', nombre || '');
       return true;
     }
     this.userInvalido = true;
