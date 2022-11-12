@@ -12,17 +12,17 @@ export class BuscarComponent implements OnInit {
 
   libros: Libro[] = [];
   titulo: string = '';
+  existe: boolean = false;
 
   constructor(private libroService: LibrosService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  buscarTitulo( ){
+  buscarTitulo(){
     this.libroService.getByTitulo( this.titulo ).subscribe(
       libro => {
         this.libros = libro;
-        console.log(this.libros);
       });
   }
 
