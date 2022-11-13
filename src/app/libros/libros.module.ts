@@ -8,6 +8,7 @@ import { LibrosRoutingModule } from './libros-routing.module';
 import { MaterialModule } from '../material/material.module';
 import { SharedModule } from '../shared/shared.module';
 import { FormsModule } from '@angular/forms';
+import { ModalComponent } from './pages/modal/modal.component';
 
 
 
@@ -16,7 +17,8 @@ import { FormsModule } from '@angular/forms';
     BuscarComponent,
     LibroComponent,
     HomeComponent,
-    ListadoComponent
+    ListadoComponent,
+    ModalComponent
   ],
   imports: [
     CommonModule,

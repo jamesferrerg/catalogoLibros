@@ -10,11 +10,18 @@ import { Libro } from '../../interfaces/libros.interface';
 export class ListadoComponent implements OnInit {
 
   libros: Libro[] = [];
+  libroDetalle: Libro[] = [{}];
 
   constructor( private librosService: LibrosService) { }
 
   ngOnInit(): void {
     this.librosService.getLibros().subscribe( libros => { this.libros = libros });
+  }
+
+  getLibro( id : number ) {
+    this.librosService.getById(id).subscribe( book => {
+      this.libroDetalle = book;
+    });
   }
 
 }

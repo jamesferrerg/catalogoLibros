@@ -9,7 +9,7 @@
           <p class="card-title">Autor: {{ libro.autor }}</p>
           <p class="card-text">Precio: <strong>$ {{ libro.precio | number }} </strong></p>
           <div class="d-grid gap-2 d-md-block row mx-1">
-            <button type="button" class="btn btn-info my-2">Ver detalle</button>
+            <button type="button" class="btn btn-info my-2" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="getLibro( libro.id! )">Ver detalle</button>
             <button type="button" class="btn btn-secondary"><i class="bi bi-cart3"></i> Agregar al carrito</button>
           </div>
         </div>
@@ -18,26 +18,33 @@
   </div>
 </div>
 
-<!--<div class="row">
-  <mat-card *ngFor="let libro of libros" class="col-md-2 col-sm-6 m-4">
-    <mat-card-header>
-      <mat-card-title> {{ libro.titulo }} </mat-card-title>
-      <mat-card-subtitle> {{ libro.autor }} </mat-card-subtitle>
-    </mat-card-header>
-    <img mat-card-image src="assets/libros/{{ libro.portada }}.jpg" />
-    <mat-card-content>
-      <p>
-        Precio:<strong> $ {{ libro.precio | number }}</strong>
-      </p>
-    </mat-card-content>
-    <div>
-      <mat-card-actions class="row">
-        <button mat-raised-button color="primary" class="my-2">Ver detalle</button>
-        <button mat-raised-button color="warn">
-          <i class="material-icons">shopping_cart</i>
-          Agregar al carrito
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">{{ libroDetalle[0].titulo }}</h1>
+      </div>
+      <div class="modal-body d-flex">
+        <img src="assets/libros/{{ libroDetalle[0].portada }}.jpg" width="40%" height="40%" class="rounded float-start flex-shrink-0" alt="...">
+        <div class="flex-grow-1 ms-3 texto-justificado">
+          Descripción:<p class="text-muted">{{ libroDetalle[0].descripcion }}</p>
+          Autor:<p class="text-muted">{{ libroDetalle[0].autor }}</p>
+          Idioma:<p class="text-muted">{{ libroDetalle[0].idioma }}</p>
+          Editorial:<p class="text-muted">{{ libroDetalle[0].editorial }}</p>
+          Precio: <strong>${{ libroDetalle[0].precio | number }}</strong>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Cerrar
         </button>
-      </mat-card-actions>
+      </div>
     </div>
-  </mat-card>
-</div>-->
+  </div>
+</div>

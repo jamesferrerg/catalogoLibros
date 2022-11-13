@@ -24,5 +24,10 @@ export class LibrosService {
   getByAutor( autor: string ): Observable<Libro[]> {
     return this.http.get<Libro[]>(`${ this.baseUrl }/libros?autor_like=${ autor }`);
   }
+
+  getById( id: number ) : Observable<Libro[]> {
+    let lbr = `${ this.baseUrl }/libros?id=${ id }`;
+    return this.http.get<Libro[]>(`${ this.baseUrl }/libros?id=${ id }`);
+  }
   
 }
