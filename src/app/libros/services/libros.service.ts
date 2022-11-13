@@ -20,5 +20,9 @@ export class LibrosService {
   getByTitulo( titulo: string ): Observable<Libro[]> {
     return this.http.get<Libro[]>(`${ this.baseUrl }/libros?titulo_like=${ titulo }`);
   }
+
+  getByAutor( autor: string ): Observable<Libro[]> {
+    return this.http.get<Libro[]>(`${ this.baseUrl }/libros?autor_like=${ autor }`);
+  }
   
 }

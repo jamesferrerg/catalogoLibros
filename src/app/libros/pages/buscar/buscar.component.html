@@ -1,7 +1,7 @@
 <app-navbar></app-navbar>
 <div class="container">
-  <div class="col-sm-4 m-3 container-fluid">
-    <label class="control-label text-muted">Busqueda por titulo:</label>
+  <div class="col-md-3 col-sm-6 m-3 input-group container-fluid">
+    <label class="control-label text-muted mx-1">Busqueda por titulo:</label>
     <div class="d-flex">
       <input
         type="text"
@@ -20,6 +20,15 @@
           Buscar
         </button>
       </div>
+    </div>
+    <div class="d-flex">
+      <label class="control-label text-muted">Filtrar por autor:</label>
+      <select class="form-select" [(ngModel)]="uniqAutor">
+        <option [ngValue]="undefined">-- Seleccionar autor --</option>
+        <option *ngFor="let item of uniqAutor" [ngValue]="item.autor">
+          {{ item.autor }}
+        </option>
+      </select>
     </div>
   </div>
   <br />
@@ -47,12 +56,7 @@
     </div>
   </div>
   <div class="alert alert-danger mt-4 fade show" role="alert" *ngIf="existe">
-    <i class="bi bi-person-x-fill fs-5"></i> No existe {{ titulo }} en el catalogo
-    <button
-      type="button"
-      class="btn-close"
-      data-bs-dismiss="alert"
-      aria-label="Close"
-    ></button>
+    <i class="bi bi-x-octagon fs-5"></i> No existe el titulo {{ titulo }} en el
+    catalogo
   </div>
 </div>
