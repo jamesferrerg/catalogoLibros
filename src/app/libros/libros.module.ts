@@ -9,6 +9,7 @@ import { MaterialModule } from '../material/material.module';
 import { SharedModule } from '../shared/shared.module';
 import { FormsModule } from '@angular/forms';
 import { ModalComponent } from './pages/modal/modal.component';
+import { CarritoComponent } from './pages/carrito/carrito.component';
 
 
 
@@ -18,7 +19,8 @@ import { ModalComponent } from './pages/modal/modal.component';
     LibroComponent,
     HomeComponent,
     ListadoComponent,
-    ModalComponent
+    ModalComponent,
+    CarritoComponent
   ],
   imports: [
     CommonModule,

@@ -10,6 +10,7 @@ import { environment } from '../../../environments/environment';
 export class LibrosService {
 
   private baseUrl: string = environment.baseUrl;
+  shoppingCar: Libro[] = [];
 
   constructor( private http: HttpClient ) { }
 
@@ -28,6 +29,11 @@ export class LibrosService {
   getById( id: number ) : Observable<Libro[]> {
     let lbr = `${ this.baseUrl }/libros?id=${ id }`;
     return this.http.get<Libro[]>(`${ this.baseUrl }/libros?id=${ id }`);
+  }
+
+  addCarBook( book: Libro ) {
+    this.shoppingCar.push(book);
+    console.log(this.shoppingCar)
   }
   
 }

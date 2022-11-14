@@ -5,6 +5,7 @@ import { ListadoComponent } from './pages/listado/listado.component';
 import { BuscarComponent } from './pages/buscar/buscar.component';
 import { LibroComponent } from './pages/libro/libro.component';
 import { RouterModule, Routes } from '@angular/router';
+import { CarritoComponent } from './pages/carrito/carrito.component';
 
 const routes: Routes = [
   {
@@ -20,8 +21,8 @@ const routes: Routes = [
         component: BuscarComponent
       },
       {
-        path: ':id',
-        component: LibroComponent
+        path: 'carrito',
+        component: CarritoComponent
       }
     ]
   },

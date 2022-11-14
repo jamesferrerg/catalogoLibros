@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { LibrosService } from '../../services/libros.service';
 import { Libro } from '../../interfaces/libros.interface';
 
@@ -22,6 +22,10 @@ export class ListadoComponent implements OnInit {
     this.librosService.getById(id).subscribe( book => {
       this.libroDetalle = book;
     });
+  }
+
+  agregarCarrito( book: Libro ) {
+    this.librosService.addCarBook(book);
   }
 
 }
